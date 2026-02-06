@@ -1,18 +1,41 @@
+# Dependencies and build output (installed/generated in image)
 node_modules
 build
+
+# Git and CI
 .git
 .gitignore
-*.md
+.woodpecker
+.woodpecker.yml
+
+# Dev / IDE / tooling (not needed at build time)
 .cursor
 .devcontainer
+.vscode
+*.md
+docs
+test.txt
+
+# Lint/format config (build does not need these)
 .eslintrc.cjs
+.eslintignore
 .prettierrc
 .prettierignore
-.eslintignore
+
+# Test and E2E (Dockerfile only runs build + critical-css)
 e2e
 playwright.config.ts
 vitest.config.ts
-test.txt
-docs
-.woodpecker.yml
-.woodpecker
+playwright-report
+coverage
+.nyc_output
+
+# Env and logs
+.env
+.env.*
+*.log
+
+# Local Docker (not needed inside image)
+docker-compose.yml
+Dockerfile
+.dockerignore
