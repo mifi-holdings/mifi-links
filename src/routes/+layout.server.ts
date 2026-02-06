@@ -1,5 +1,5 @@
 import contentData from '$lib/data/links.json';
-import { VARIANT_HOSTS, GA_MEASUREMENT_IDS } from '$lib/config';
+import { VARIANT_HOSTS, GA_MEASUREMENT_IDS, THEME_COLORS } from '$lib/config';
 import type { Site, ContentData, ProcessedLink } from '$lib/data/types';
 import type { LayoutServerLoad } from './$types';
 import { ContentVariant, HeroLayout } from '$lib/data/constants';
@@ -18,6 +18,9 @@ export type LayoutServerDataOut = {
     };
     variant: string;
     gaMeasurementId: string;
+    /** theme-color meta values for current variant */
+    themeColorLight: string;
+    themeColorDark: string;
 };
 
 export const load: LayoutServerLoad<LayoutServerDataOut> = (): LayoutServerDataOut => {
@@ -58,11 +61,14 @@ export const load: LayoutServerLoad<LayoutServerDataOut> = (): LayoutServerDataO
         contactLinks: siteDef?.contactLinks,
         qrCodeImage: siteDef?.qrCodeImage ?? undefined,
     };
+    const themeColors = THEME_COLORS[variant];
     return {
         site,
         contactLinks,
         links: { sections },
         variant,
         gaMeasurementId: GA_MEASUREMENT_IDS[variant],
+        themeColorLight: themeColors.light,
+        themeColorDark: themeColors.dark,
     };
 };

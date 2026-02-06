@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
     import { Moon, SunMoon, Sun } from '@lucide/svelte';
     import { getStoredTheme, setTheme } from '$lib/theme';
     import type { ThemeMode } from '$lib/theme';
@@ -18,7 +17,8 @@
 
     const themeOffset = $derived(OFFSETS[current]);
 
-    onMount(() => {
+    $effect(() => {
+        if (typeof document === 'undefined') return;
         current = getStoredTheme();
     });
 

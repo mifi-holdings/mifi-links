@@ -22,6 +22,30 @@
 <svelte:head>
     <title>{data.site.title}</title>
     <meta name="description" content={data.site.metaDescription} />
+    <link rel="canonical" href={data.site.url} />
+    <meta name="robots" content="index, follow" />
+    {#if data.site.person?.name}
+        <meta name="author" content={data.site.person.name} />
+    {/if}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={data.site.title} />
+    <meta property="og:description" content={data.site.metaDescription} />
+    <meta property="og:url" content={data.site.url} />
+    <meta property="og:site_name" content={data.site.title} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="{data.site.url}/assets/images/mifi-{data.variant}-og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={data.site.title} />
+    <meta name="twitter:description" content={data.site.metaDescription} />
+    <meta name="twitter:image" content="{data.site.url}/assets/images/mifi-{data.variant}-twitter-image.webp" />
+    <meta name="twitter:image:width" content="1200" />
+    <meta name="twitter:image:height" content="1200" />
 </svelte:head>
 
 <main id="main-content">

@@ -34,8 +34,9 @@ pnpm preview      # preview build at http://localhost:4173
 | `pnpm dev:bio`       | Start Vite dev server for mifi.bio                                                               |
 | `pnpm dev:dev`       | Start Vite dev server for mifi.dev                                                               |
 | `pnpm build`         | Build static site to `build/`                                                                    |
-| `pnpm build:full`    | Build + inline critical CSS (requires Chromium: `pnpm exec puppeteer browsers install chromium`) |
-| `pnpm preview`       | Serve `build/` locally                                                                           |
+| `pnpm build:full`       | Build + inline critical CSS (run `pnpm run critical-css:install` once to install Chromium) |
+| `pnpm critical-css:install` | Install Chromium for critical CSS (required once before first `build:full`)              |
+| `pnpm preview`          | Serve `build/` locally                                                                      |
 | `pnpm check`         | Run `svelte-kit sync` and `svelte-check`                                                         |
 | `pnpm lint`          | ESLint + Stylelint                                                                               |
 | `pnpm format`        | Prettier (write)                                                                                 |
@@ -63,7 +64,7 @@ pnpm preview      # preview build at http://localhost:4173
 - **Format:** Prettier
 - **Unit tests:** Vitest
 - **E2E / visual regression:** Playwright (use same Linux build in dev container and CI)
-- **Critical CSS:** Post-build step via `critical` (run `pnpm build:full` with Chromium installed)
+- **Critical CSS:** Post-build step via `critical` (run `pnpm run critical-css:install` once, then `pnpm build:full`)
 
 ## Build and run with Docker
 

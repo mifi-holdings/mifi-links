@@ -1,4 +1,4 @@
-# CI: runs on every push. Lint, check, test, build (dev), e2e.
+# CI: runs on every push. Install, lint, check, test, build (dev), e2e.
 when:
     - event: pull_request
     - event: push
@@ -7,15 +7,75 @@ when:
     - event: manual
 
 steps:
-    build:
+    install:
+        image: node:22-bookworm-slim
+        commands:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
+
+    lint:
         image: node:22-bookworm-slim
         commands:
             - corepack enable
             - corepack prepare pnpm@latest --activate
             - pnpm install --frozen-lockfile
             - pnpm run lint
+        depends_on:
+            - install
+
+    check:
+        image: node:22-bookworm-slim
+        commands:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
             - pnpm run check
+        depends_on:
+            - install
+
+    test:
+        image: node:22-bookworm-slim
+        commands:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
             - pnpm run test:run
+        depends_on:
+            - install
+
+    build:
+        image: node:22-bookworm-slim
+        commands:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
+            - pnpm run build
+        depends_on:
+            - install
+
+    build-full:
+        image: node:22-bookworm-slim
+        commands:
+            - apt-get update
+            - apt-get install -y --no-install-recommends ca-certificates libasound2 libatk-bridge2.0-0 libatk1.0-0 libcups2 libdrm2 libgbm1 libgtk-3-0 libnss3 libxcomposite1 libxdamage1 libxfixes3 libxkbcommon0 libxrandr2
+            - rm -rf /var/lib/apt/lists/*
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
+            - pnpm run critical-css:install
+            - pnpm run build:full
+        depends_on:
+            - install
+
+    e2e:
+        image: node:22-bookworm-slim
+        commands:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
             - pnpm run build
             - pnpm exec playwright install chromium --with-deps
             - pnpm run test:e2e
+        depends_on:
+            - build

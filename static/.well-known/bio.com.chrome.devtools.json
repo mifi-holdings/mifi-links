@@ -1,0 +1,12 @@
+{
+    "name": "mifi.bio",
+    "url": "https://mifi.bio",
+    "description": "mifi.bio",
+    "icons": [
+        {
+            "src": "https://mifi.dev/assets/images/apple-touch-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

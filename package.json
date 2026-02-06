@@ -5,8 +5,12 @@
     "scripts": {
         "dev:bio": "CONTENT_VARIANT=bio vite dev",
         "dev:dev": "CONTENT_VARIANT=dev vite dev",
-        "build": "vite build",
-        "build:full": "vite build && pnpm run critical-css",
+        "build": "vite build && node scripts/externalize-inline-script.mjs",
+        "build:bio": "CONTENT_VARIANT=bio vite build && node scripts/externalize-inline-script.mjs",
+        "build:dev": "CONTENT_VARIANT=dev vite build && node scripts/externalize-inline-script.mjs",
+        "build:full": "vite build && pnpm run critical-css && node scripts/externalize-inline-script.mjs",
+        "build:full:bio": "CONTENT_VARIANT=bio vite build && pnpm run critical-css && node scripts/externalize-inline-script.mjs",
+        "build:full:dev": "CONTENT_VARIANT=dev vite build && pnpm run critical-css && node scripts/externalize-inline-script.mjs",
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -19,7 +23,11 @@
         "test:coverage": "vitest run --coverage",
         "test:e2e": "playwright test",
         "test:e2e:ui": "playwright test --ui",
-        "critical-css": "node scripts/critical-css.mjs"
+        "test:e2e:snapshots:dev": "CONTENT_VARIANT=dev pnpm run build && CONTENT_VARIANT=dev pnpm exec playwright test --update-snapshots",
+        "test:e2e:snapshots:bio": "CONTENT_VARIANT=bio pnpm run build && CONTENT_VARIANT=bio pnpm exec playwright test --update-snapshots",
+        "critical-css": "node scripts/critical-css.mjs",
+        "critical-css:install": "pnpm exec puppeteer browsers install chrome",
+        "externalize-inline-script": "node scripts/externalize-inline-script.mjs"
     },
     "devDependencies": {
         "@playwright/test": "^1.49.0",

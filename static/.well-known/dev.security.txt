@@ -1,0 +1,11 @@
+# Canonical URL for this file (recommended for validation)
+Canonical: https://mifi.dev/.well-known/security.txt
+
+# Contact for reporting security vulnerabilities (required)
+Contact: mailto:security@mifi.holdings
+
+# Optional: link to your vulnerability disclosure policy when you have one
+# Policy: https://mifi.dev/security
+
+# Date after which this file is considered stale (required; RFC 3339; max 1 year recommended)
+Expires: 2027-02-01T00:00:00.000Z
