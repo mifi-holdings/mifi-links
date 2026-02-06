@@ -34,7 +34,9 @@ try {
         dimensions: [{ width: 1280, height: 720 }],
         penthouse: { timeout: 30000 },
     });
-    writeFileSync(htmlPath, outHtml, 'utf-8');
+    // Ensure _app asset paths stay absolute (critical may rewrite; host-based routing needs /_app/...)
+    const normalized = outHtml.replace(/\.\/_app\//g, '/_app/');
+    writeFileSync(htmlPath, normalized, 'utf-8');
     console.log(`Critical CSS inlined in ${htmlPath}`);
 } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);

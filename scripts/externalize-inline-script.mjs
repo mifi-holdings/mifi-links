@@ -73,15 +73,20 @@ try {
         console.log('No SvelteKit inline bootstrap script found in', htmlPath);
         process.exit(0);
     }
-    const content = found.content;
+    let content = found.content;
+    // Bootstrap runs from /_app/immutable/bootstrap.xxx.js; imports like "./_app/immutable/entry/..."
+    // would resolve to /_app/immutable/_app/immutable/entry/... (duplicate). Use directory-relative paths.
+    content = content.replace(/\.\/_app\/immutable\//g, './');
     const hash = createHash('sha256').update(content).digest('hex').slice(0, 8);
     const filename = `bootstrap.${hash}.js`;
     const immutableDir = join(buildDir, '_app', 'immutable');
     mkdirSync(immutableDir, { recursive: true });
     const scriptPath = join(immutableDir, filename);
     writeFileSync(scriptPath, content.trimStart(), 'utf-8');
-    const scriptTag = `<script src="./_app/immutable/${filename}"></script>`;
+    const scriptTag = `<script src="/_app/immutable/${filename}"></script>`;
     html = html.slice(0, found.start) + scriptTag + html.slice(found.end);
+    // Use absolute paths for _app assets so they resolve correctly (host-based routing, redirects)
+    html = html.replace(/\.\/_app\//g, '/_app/');
     writeFileSync(htmlPath, html, 'utf-8');
     console.log('Externalized SvelteKit bootstrap to', scriptPath);
 } catch (err) {
