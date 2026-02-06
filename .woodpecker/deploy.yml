@@ -3,8 +3,10 @@
 when:
     branch: main
     event: [push, tag, manual]
+
 depends_on:
     - ci
+
 steps:
     - name: Docker image build
       image: docker:latest

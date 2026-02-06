@@ -1,4 +1,11 @@
 # CI: runs on every push. Lint, check, test, build (dev), e2e.
+when:
+    - event: pull_request
+    - event: push
+      branch: main
+    - event: tag
+    - event: manual
+
 steps:
     build:
         image: node:22-bookworm-slim
