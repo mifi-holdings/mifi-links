@@ -33,6 +33,9 @@ RUN pnpm run critical-css:install
 
 COPY . .
 
+# Create output dirs and generate .svelte-kit so tsconfig.json extends resolves (avoids esbuild warning).
+RUN mkdir -p /out && pnpm exec svelte-kit sync
+
 # Build dev variant with critical CSS, move output, then build bio variant with critical CSS.
 RUN set -e && \
     CONTENT_VARIANT=dev pnpm run build && pnpm run critical-css && \
