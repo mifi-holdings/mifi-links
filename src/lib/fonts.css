@@ -1,0 +1,67 @@
+/**
+ * Self-hosted fonts in static/assets/fonts/ (Google Fonts–style filenames).
+ * Plus Jakarta Sans 700 (wordmark), Fraunces 500 (headings), Inter 400/500/600 (body).
+ *
+ * Wordmark fi ligature: Google’s latin woff2 subsets often omit GSUB ligature tables.
+ * Re-subset the full Bold TTF/OTF with ligatures kept (see README “Fonts” section):
+ *   pyftsubset /path/to/PlusJakartaSans-Bold.ttf --output-file=static/assets/fonts/plus-jakarta-sans-700-liga.woff2
+ *     --flavor=woff2 --layout-features='liga','clig' --unicodes='U+0020-007F,U+00A0-00FF,U+FB01,U+FB02'
+ * Then change the url() below to plus-jakarta-sans-700-liga.woff2.
+ */
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/assets/fonts/plus-jakarta-sans-v12-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/assets/fonts/plus-jakarta-sans-v12-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('/assets/fonts/plus-jakarta-sans-v12-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Fraunces;
+    src: url('/assets/fonts/fraunces-variable-opsz-wght.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    font-optical-sizing: auto;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/inter-v20-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/inter-v20-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('/assets/fonts/inter-v20-latin-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}

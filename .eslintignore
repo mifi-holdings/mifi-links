@@ -1,0 +1,12 @@
+node_modules
+build
+.svelte-kit
+package
+coverage
+playwright-report
+test-results
+*.config.js
+*.config.cjs
+*.config.mjs
+src/**/*.test.ts
+src/**/*.spec.ts

@@ -1,0 +1,13 @@
+steps:
+    build:
+        image: node:22-bookworm-slim
+        commands:
+            - corepack enable
+            - corepack prepare pnpm@latest --activate
+            - pnpm install --frozen-lockfile
+            - pnpm run lint
+            - pnpm run check
+            - pnpm run test:run
+            - pnpm run build
+            - pnpm exec playwright install chromium --with-deps
+            - pnpm run test:e2e

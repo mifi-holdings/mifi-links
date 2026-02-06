@@ -1,0 +1,218 @@
+{
+    "siteByVariant": {
+        "dev": {
+            "title": "mifi.dev — the homepage of the professional Mike Fitzpatrick",
+            "metaDescription": "Professional links and profiles for mifi – consultancy, code, and contact.",
+            "url": "https://mifi.dev",
+            "heroLayout": "side-by-side",
+            "profileImage": "classic-mifi",
+            "pronunciation": "MY-fy (/ˈmaɪˌfaɪ/)",
+            "pronouns": "he/him",
+            "location": "Boston, MA",
+            "person": {
+                "name": "mifi",
+                "sameAs": [
+                    "https://mifi.ventures",
+                    "https://cal.mifi.ventures/the-mifi",
+                    "https://www.linkedin.com/in/the-mifi",
+                    "https://github.com/the-mifi",
+                    "https://git.mifi.dev/mifi"
+                ]
+            },
+            "linksHeading": "Professional Links and Profiles",
+            "showContact": true,
+            "qrCodeImage": null
+        },
+        "bio": {
+            "title": "mifi.bio — the homepage of the human Mike Fitzpatrick",
+            "metaDescription": "Links and profiles for mifi – professional, personal, and everything in between.",
+            "url": "https://mifi.bio",
+            "heroLayout": "side-by-side",
+            "profileImage": "tropical-mifi",
+            "pronunciation": "MY-fy (/ˈmaɪˌfaɪ/)",
+            "pronouns": "he/him/mifi",
+            "location": "Vitória, ES, Brasil",
+            "person": {
+                "name": "mifi",
+                "sameAs": [
+                    "https://mifi.ventures",
+                    "https://www.linkedin.com/in/the-mifi",
+                    "https://github.com/the-mifi",
+                    "https://git.mifi.dev/mifi",
+                    "https://www.instagram.com/the.mifi",
+                    "https://www.instagram.com/mifi.no.brasil",
+                    "https://facebook.com/mifi79",
+                    "https://youtube.com/@the-real-mifi",
+                    "https://www.tiktok.com/@the.mifi",
+                    "https://www.snapchat.com/add/the.mifi",
+                    "https://www.discord.com/users/the_mifi",
+                    "https://www.strava.com/athletes/the-mifi",
+                    "https://flickr.com/people/michael-gerard"
+                ]
+            },
+            "linksHeading": "Links and Profiles",
+            "showContact": false,
+            "qrCodeImage": null
+        }
+    },
+    "contactLinks": [
+        {
+            "href": "https://cal.mifi.ventures/the-mifi",
+            "icon": "Calendar",
+            "label": "Book a meeting",
+            "description": "Book time. No games, no gatekeeping.",
+            "utmContent": "contact-panel",
+            "variants": ["dev", "bio"]
+        }
+    ],
+    "sections": [
+        {
+            "id": "professional",
+            "title": "Professional / Code",
+            "order": {
+                "bio": 2,
+                "dev": 0
+            },
+            "links": [
+                {
+                    "href": "https://mifi.ventures",
+                    "icon": "Mifi",
+                    "label": "mifi Ventures",
+                    "description": "The LLC. Where the real work happens (and the invoices get paid).",
+                    "utmContent": "mifi-ventures",
+                    "variants": ["dev", "bio"]
+                },
+                {
+                    "href": "https://cal.mifi.ventures/the-mifi",
+                    "icon": "Calendar",
+                    "label": "Cal.com",
+                    "description": "Book time. No games, no gatekeeping.",
+                    "utmContent": "cal",
+                    "variants": []
+                },
+                {
+                    "href": "https://github.com/the-mifi",
+                    "label": "GitHub",
+                    "description": "Code, commits, and the occasional typo in prod.",
+                    "variants": ["dev", "bio"]
+                }
+            ]
+        },
+        {
+            "id": "professional-link-site",
+            "title": "Professional Link Site",
+            "order": {
+                "bio": 2,
+                "dev": null
+            },
+            "links": [
+                {
+                    "href": "https://mifi.dev",
+                    "icon": "Mifi",
+                    "label": "mifi.dev",
+                    "description": "The professional side. Suits optional.",
+                    "utmContent": "mifi-dev",
+                    "variants": ["bio"]
+                }
+            ]
+        },
+        {
+            "id": "resume",
+            "title": "Resumes",
+            "order": {
+                "bio": 3,
+                "dev": 1
+            },
+            "links": [
+                {
+                    "href": "https://mifi.dev/downloads/resume-2026c.pdf",
+                    "icon": "Resume",
+                    "label": "Contract",
+                    "description": "Need an engineering gun-for-hire? I do that.",
+                    "utmContent": "resume-c",
+                    "variants": ["dev", "bio"]
+                },
+                {
+                    "href": "https://mifi.dev/downloads/resume-2026p.pdf",
+                    "icon": "Resume",
+                    "label": "Permanent",
+                    "description": "I'm open to dedicated, long-term engagements, too.",
+                    "utmContent": "resume-p",
+                    "variants": ["dev", "bio"]
+                }
+            ]
+        },
+        {
+            "id": "social",
+            "title": "Social",
+            "order": {
+                "bio": 0,
+                "dev": 1
+            },
+            "links": [
+                {
+                    "href": "https://www.discord.com/users/the_mifi",
+                    "label": "Discord",
+                    "description": "Where I lurk when I should be working.",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://facebook.com/mifi79",
+                    "label": "Facebook",
+                    "description": "Yes, I'm still here. Don't @ me, poke me, or whatever we're doing these days",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://flickr.com/people/michael-gerard",
+                    "label": "Flickr",
+                    "description": "Where I used tostore my photos and videos... an archive of the ancient past.",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://www.instagram.com/the.mifi",
+                    "icon": "Instagram",
+                    "label": "Instagram (US)",
+                    "description": "Visual diary. Update frequency: whenever I remember.",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://www.instagram.com/mifi.no.brasil",
+                    "icon": "Instagram",
+                    "label": "Instagram (Brazil)",
+                    "description": "American recipes, Portuguese practice, and Reel Time chaos.",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://www.linkedin.com/in/the-mifi",
+                    "label": "LinkedIn",
+                    "description": "Where I pretend to be professional (it's mostly true).",
+                    "variants": ["dev", "bio"]
+                },
+                {
+                    "href": "https://www.snapchat.com/add/the.mifi",
+                    "label": "Snapchat",
+                    "description": "Ephemeral nonsense. You know the deal.",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://www.strava.com/athletes/the-mifi",
+                    "label": "Strava",
+                    "description": "Where I track my rides and other outdoor activities.",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://www.tiktok.com/@the.mifi",
+                    "label": "TikTok",
+                    "description": "Short-form chaos. You've been warned.",
+                    "variants": ["bio"]
+                },
+                {
+                    "href": "https://youtube.com/@the-real-mifi",
+                    "label": "YouTube",
+                    "description": "Drones, vibes, and the occasional crash.",
+                    "variants": ["bio"]
+                }
+            ]
+        }
+    ]
+}

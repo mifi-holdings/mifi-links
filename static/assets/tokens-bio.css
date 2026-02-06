@@ -1,0 +1,131 @@
+/**
+ * mifi.bio variant – blue & rose palette (WCAG 2.2 AAA).
+ * Light by default; dark via prefers-color-scheme (auto) or [data-theme="dark"].
+ * Extra tuning tokens (--tune-*) for experimentation.
+ *
+ * Alternative palettes (AAA-compliant; replace the blocks below to try):
+ * - Green only: primary/secondary both green hues (e.g. 158 and 175).
+ * - Orange only: primary/secondary both warm hues (e.g. 28 and 24), neutrals hue 30.
+ */
+
+:root {
+    /* Neutrals – cool tint (blue) */
+    --color-bg: hsl(220 22% 98%);
+    --color-fg: hsl(220 20% 12%);
+    --color-surface: hsl(220 20% 100%);
+    --color-surface-elevated: hsl(220 18% 100%);
+    --color-border: hsl(220 16% 90%);
+    --color-border-subtle: hsl(220 14% 94%);
+
+    /* Primary – blue (≥7:1 on bg) */
+    --color-primary: hsl(220 65% 32%);
+    --color-primary-muted: hsl(220 50% 38%);
+    --color-secondary: hsl(330 55% 38%);
+    --color-secondary-muted: hsl(330 45% 42%);
+
+    --color-accent: hsl(220 65% 32%);
+    --color-focus-ring: hsl(220 65% 32%);
+    --color-link: hsl(220 65% 36%);
+    --color-link-hover: hsl(220 55% 26%);
+
+    /* Tuning */
+    --tune-primary-alt: hsl(220 55% 38%);
+    --tune-secondary-alt: hsl(330 50% 45%);
+    --tune-surface-2: hsl(220 20% 98%);
+    --tune-accent-alt: hsl(330 50% 48%);
+
+    /* Typography */
+    --font-wordmark: 'Plus Jakarta Sans', var(--font-sans);
+    --font-heading: Fraunces, var(--font-sans);
+    --font-body: Inter, var(--font-sans);
+    --font-heading-opsz: 36;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --color-bg: hsl(220 18% 8%);
+        --color-fg: hsl(220 14% 93%);
+        --color-surface: hsl(220 16% 11%);
+        --color-surface-elevated: hsl(220 14% 15%);
+        --color-border: hsl(220 14% 20%);
+        --color-border-subtle: hsl(220 12% 16%);
+        --color-primary: hsl(220 55% 62%);
+        --color-primary-muted: hsl(220 45% 55%);
+        --color-secondary: hsl(330 50% 65%);
+        --color-secondary-muted: hsl(330 42% 58%);
+        --color-accent: hsl(220 55% 62%);
+        --color-focus-ring: hsl(220 55% 62%);
+        --color-link: hsl(220 55% 66%);
+        --color-link-hover: hsl(220 50% 75%);
+        --tune-primary-alt: hsl(220 50% 58%);
+        --tune-secondary-alt: hsl(330 48% 62%);
+        --tune-surface-2: hsl(220 18% 9%);
+        --tune-accent-alt: hsl(330 48% 62%);
+    }
+}
+
+[data-theme='light'] {
+    --color-bg: hsl(220 22% 98%);
+    --color-fg: hsl(220 20% 12%);
+    --color-surface: hsl(220 20% 100%);
+    --color-surface-elevated: hsl(220 18% 100%);
+    --color-border: hsl(220 16% 90%);
+    --color-border-subtle: hsl(220 14% 94%);
+    --color-primary: hsl(220 65% 32%);
+    --color-primary-muted: hsl(220 50% 38%);
+    --color-secondary: hsl(330 55% 38%);
+    --color-secondary-muted: hsl(330 45% 42%);
+    --color-accent: hsl(220 65% 32%);
+    --color-focus-ring: hsl(220 65% 32%);
+    --color-link: hsl(220 65% 36%);
+    --color-link-hover: hsl(220 55% 26%);
+    --tune-primary-alt: hsl(220 55% 38%);
+    --tune-secondary-alt: hsl(330 50% 45%);
+    --tune-surface-2: hsl(220 20% 98%);
+    --tune-accent-alt: hsl(330 50% 48%);
+}
+
+[data-theme='dark'] {
+    --color-bg: hsl(220 18% 8%);
+    --color-fg: hsl(220 14% 93%);
+    --color-surface: hsl(220 16% 11%);
+    --color-surface-elevated: hsl(220 14% 15%);
+    --color-border: hsl(220 14% 20%);
+    --color-border-subtle: hsl(220 12% 16%);
+    --color-primary: hsl(220 55% 62%);
+    --color-primary-muted: hsl(220 45% 55%);
+    --color-secondary: hsl(330 50% 65%);
+    --color-secondary-muted: hsl(330 42% 58%);
+    --color-accent: hsl(220 55% 62%);
+    --color-focus-ring: hsl(220 55% 62%);
+    --color-link: hsl(220 55% 66%);
+    --color-link-hover: hsl(220 50% 75%);
+    --tune-primary-alt: hsl(220 50% 58%);
+    --tune-secondary-alt: hsl(330 48% 62%);
+    --tune-surface-2: hsl(220 18% 9%);
+    --tune-accent-alt: hsl(330 48% 62%);
+}
+
+/* -------------------------------------------------------------------------
+   ALTERNATIVE PALETTES (WCAG 2.2 AAA). Replace the :root and dark blocks
+   above with one of these if you prefer a single-hue scheme.
+   -------------------------------------------------------------------------
+
+   GREEN ONLY (no orange) – :root neutrals/primary/secondary:
+   --color-bg: hsl(158 22% 98%);
+   --color-fg: hsl(158 20% 12%);
+   --color-primary: hsl(158 64% 28%);
+   --color-primary-muted: hsl(158 45% 38%);
+   --color-secondary: hsl(175 55% 32%);
+   --color-secondary-muted: hsl(175 40% 40%);
+   (Dark: primary hsl(158 50% 58%); secondary hsl(175 45% 60%).)
+
+   ORANGE ONLY (no green) – :root neutrals/primary/secondary:
+   --color-bg: hsl(30 25% 98%);
+   --color-fg: hsl(30 20% 10%);
+   --color-primary: hsl(24 72% 38%);
+   --color-primary-muted: hsl(24 55% 45%);
+   --color-secondary: hsl(38 65% 35%);
+   --color-secondary-muted: hsl(38 50% 42%);
+   (Dark: primary hsl(24 60% 58%); secondary hsl(38 55% 62%).)
+*/

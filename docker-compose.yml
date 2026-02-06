@@ -1,0 +1,17 @@
+services:
+    web:
+        image: nginx:alpine
+        restart: unless-stopped
+        volumes:
+            - ./build:/usr/share/nginx/html:ro
+        labels:
+            - 'traefik.enable=true'
+            - 'traefik.http.routers.mifi-dev.rule=Host(`mifi.dev`) || Host(`www.mifi.dev`)'
+            - 'traefik.http.routers.mifi-dev.entrypoints=websecure'
+            - 'traefik.http.services.mifi-dev.loadbalancer.server.port=80'
+        networks:
+            - marina-net
+
+networks:
+    marina-net:
+        external: true

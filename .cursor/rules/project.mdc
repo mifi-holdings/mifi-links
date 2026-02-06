@@ -1,0 +1,10 @@
+---
+description: mifi.dev landing – stack and conventions
+globs: ["**/*"]
+---
+
+- Use **pnpm** only (no npm/yarn). **TypeScript** everywhere.
+- Content is **JSON** in `src/lib/data/`; load at build time in `+page.server.ts`. No client-side data fetching.
+- **CSP** is set via Traefik; do not add CSP in app code. No unsafe-inline scripts.
+- Target **WCAG 2.2 AAA** and semantic HTML; use JSON-LD for SEO.
+- **Dev container** and **CI** use the same Linux + Playwright Chromium for consistent e2e snapshots.

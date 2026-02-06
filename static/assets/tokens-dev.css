@@ -1,0 +1,99 @@
+/**
+ * mifi.dev variant – purple/slate palette.
+ * Light by default; dark via prefers-color-scheme (auto) or [data-theme="dark"].
+ * Extra tuning tokens (--tune-*) for experimentation.
+ */
+
+:root {
+    --color-bg: hsl(260 20% 98%);
+    --color-fg: hsl(260 15% 12%);
+    --color-surface: hsl(260 18% 100%);
+    --color-surface-elevated: hsl(260 15% 100%);
+    --color-border: hsl(260 12% 90%);
+    --color-border-subtle: hsl(260 10% 94%);
+    --color-primary: hsl(262 83% 38%);
+    --color-primary-muted: hsl(262 60% 52%);
+    --color-secondary: hsl(220 25% 35%);
+    --color-secondary-muted: hsl(220 20% 48%);
+    --color-accent: hsl(262 83% 38%);
+    --color-focus-ring: hsl(262 83% 38%);
+    --color-link: hsl(262 83% 38%);
+    --color-link-hover: hsl(262 70% 30%);
+
+    /* Tuning – adjust without changing structure */
+    --tune-primary-alt: hsl(262 70% 45%);
+    --tune-secondary-alt: hsl(220 30% 42%);
+    --tune-surface-2: hsl(260 12% 98%);
+    --tune-accent-alt: hsl(262 60% 50%);
+
+    /* Typography (shared; override in app if needed) */
+    --font-wordmark: 'Plus Jakarta Sans', var(--font-sans);
+    --font-heading: Fraunces, var(--font-sans);
+    --font-body: Inter, var(--font-sans);
+    --font-heading-opsz: 36; /* optical size for variable Fraunces; no effect on static instances */
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --color-bg: hsl(260 18% 8%);
+        --color-fg: hsl(260 12% 94%);
+        --color-surface: hsl(260 20% 12%);
+        --color-surface-elevated: hsl(260 18% 16%);
+        --color-border: hsl(260 15% 22%);
+        --color-border-subtle: hsl(260 12% 18%);
+        --color-primary: hsl(262 70% 65%);
+        --color-primary-muted: hsl(262 50% 58%);
+        --color-secondary: hsl(220 25% 68%);
+        --color-secondary-muted: hsl(220 20% 58%);
+        --color-accent: hsl(262 70% 65%);
+        --color-focus-ring: hsl(262 70% 65%);
+        --color-link: hsl(262 70% 70%);
+        --color-link-hover: hsl(262 65% 82%);
+        --tune-primary-alt: hsl(262 60% 60%);
+        --tune-secondary-alt: hsl(220 30% 65%);
+        --tune-surface-2: hsl(260 15% 11%);
+        --tune-accent-alt: hsl(262 55% 68%);
+    }
+}
+
+[data-theme='light'] {
+    --color-bg: hsl(260 20% 98%);
+    --color-fg: hsl(260 15% 12%);
+    --color-surface: hsl(260 18% 100%);
+    --color-surface-elevated: hsl(260 15% 100%);
+    --color-border: hsl(260 12% 90%);
+    --color-border-subtle: hsl(260 10% 94%);
+    --color-primary: hsl(262 83% 38%);
+    --color-primary-muted: hsl(262 60% 52%);
+    --color-secondary: hsl(220 25% 35%);
+    --color-secondary-muted: hsl(220 20% 48%);
+    --color-accent: hsl(262 83% 38%);
+    --color-focus-ring: hsl(262 83% 38%);
+    --color-link: hsl(262 83% 38%);
+    --color-link-hover: hsl(262 70% 30%);
+    --tune-primary-alt: hsl(262 70% 45%);
+    --tune-secondary-alt: hsl(220 30% 42%);
+    --tune-surface-2: hsl(260 12% 98%);
+    --tune-accent-alt: hsl(262 60% 50%);
+}
+
+[data-theme='dark'] {
+    --color-bg: hsl(260 18% 8%);
+    --color-fg: hsl(260 12% 94%);
+    --color-surface: hsl(260 20% 12%);
+    --color-surface-elevated: hsl(260 18% 16%);
+    --color-border: hsl(260 15% 22%);
+    --color-border-subtle: hsl(260 12% 18%);
+    --color-primary: hsl(262 70% 65%);
+    --color-primary-muted: hsl(262 50% 58%);
+    --color-secondary: hsl(220 25% 68%);
+    --color-secondary-muted: hsl(220 20% 58%);
+    --color-accent: hsl(262 70% 65%);
+    --color-focus-ring: hsl(262 70% 65%);
+    --color-link: hsl(262 70% 70%);
+    --color-link-hover: hsl(262 65% 82%);
+    --tune-primary-alt: hsl(262 60% 60%);
+    --tune-secondary-alt: hsl(220 30% 65%);
+    --tune-surface-2: hsl(260 15% 11%);
+    --tune-accent-alt: hsl(262 55% 68%);
+}

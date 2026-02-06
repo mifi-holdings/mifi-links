@@ -1,0 +1,24 @@
+{
+    "name": "mifi Links",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22",
+            "nodeGypDependencies": true
+        },
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm exec playwright install chromium --with-deps",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "svelte.svelte-vscode",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "bradlc.vscode-tailwindcss"
+            ]
+        }
+    },
+    "remoteUser": "node",
+    "forwardPorts": [5173, 4173]
+}
