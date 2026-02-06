@@ -19,7 +19,7 @@ This repo is a **one-page static** Linktree-style site for mifi.dev. It is **not
 - Use **semantic HTML** and **JSON-LD** for SEO; target **WCAG 2.2 AAA** for accessibility.
 - **No unsafe-inline** scripts; all JS via `<script src="...">`.
 - **Dev container** uses the same Linux + Playwright Chromium as CI so e2e/visual-regression snapshots are comparable.
-- **Docker:** Static server is **nginx**; Traefik labels for `mifi.dev`, `www.mifi.dev`, network `marina-net`.
+- **Docker:** Single image with both variants; **nginx** does host-based routing (mifi.dev / www.mifi.dev → `/html/dev`, mifi.bio / www.mifi.bio → `/html/bio`). Traefik labels for both hosts; network `marina-net`. Dockerfile builds both with `CONTENT_VARIANT=dev` and `CONTENT_VARIANT=bio`.
 - **CI:** Woodpecker; pipeline runs lint, unit tests, e2e/visual regression, build (pnpm).
 
 ## Key paths
@@ -29,7 +29,9 @@ This repo is a **one-page static** Linktree-style site for mifi.dev. It is **not
 - `src/app.html` – HTML shell
 - `scripts/critical-css.mjs` – post-build critical CSS
 - `.devcontainer/` – dev container (Node, pnpm, Playwright Linux)
-- `docker-compose` – nginx + Traefik (in repo root when added)
+- `Dockerfile` – multi-stage build (both dev + bio variants), then nginx with host-based routing
+- `nginx/default.conf` – nginx server blocks for mifi.dev and mifi.bio
+- `docker-compose.yml` – one service, registry image, Traefik labels for both hosts
 
 ## Commands
 

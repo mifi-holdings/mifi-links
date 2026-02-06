@@ -1,3 +1,4 @@
+# CI: runs on every push. Lint, check, test, build (dev), e2e.
 steps:
     build:
         image: node:22-bookworm-slim

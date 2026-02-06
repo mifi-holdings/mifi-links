@@ -1,6 +1,6 @@
 {
     "name": "mifi-linktree",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "dev:bio": "CONTENT_VARIANT=bio vite dev",
@@ -54,5 +54,10 @@
     "type": "module",
     "dependencies": {
         "@lucide/svelte": "^0.563.1"
+    },
+    "packageManager": "pnpm@10.28.2",
+    "repository": {
+        "type": "git",
+        "url": "https://git.mifi.dev/mifi-holdings/mifi-links.git"
     }
 }

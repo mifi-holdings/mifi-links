@@ -65,10 +65,24 @@ pnpm preview      # preview build at http://localhost:4173
 - **E2E / visual regression:** Playwright (use same Linux build in dev container and CI)
 - **Critical CSS:** Post-build step via `critical` (run `pnpm build:full` with Chromium installed)
 
+## Build and run with Docker
+
+One image contains both variants (mifi.dev and mifi.bio). The Dockerfile runs two SvelteKit builds (`CONTENT_VARIANT=dev` and `CONTENT_VARIANT=bio`) and nginx serves by host.
+
+```bash
+docker build -t mifi-links:local .
+docker run --rm -p 8080:80 mifi-links:local
+```
+
+Then open `http://localhost:8080` with `Host: mifi.dev` or `Host: mifi.bio` (e.g. add `127.0.0.1 mifi.dev` to `/etc/hosts` and visit `http://mifi.dev:8080`).
+
+For production, the Portainer stack uses the image from the package registry. To run the stack locally with the built image, use the same `docker-compose.yml` and either point it at your local tag or run `docker compose build` then `docker compose up`.
+
 ## Deploy
 
-- Repo: `git.mifi.dev/mifi-holdings/mifi-dev-landing`
-- Deploy via webhook to Portainer stack; `docker-compose` in repo defines nginx + Traefik labels for `mifi.dev` and `www.mifi.dev` on network `marina-net`.
+- Repo: `git.mifi.dev/mifi-holdings/mifi-links`
+- One image (both mifi.dev and mifi.bio); deploy via webhook to Portainer stack.
+- `docker-compose.yml` defines one service with nginx and Traefik labels for `mifi.dev`, `www.mifi.dev`, `mifi.bio`, and `www.mifi.bio` on network `marina-net`.
 
 ## Fonts
 
