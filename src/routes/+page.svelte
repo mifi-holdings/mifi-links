@@ -1,6 +1,5 @@
 <script lang="ts">
     import ContactPanel from '$lib/components/ContactPanel.svelte';
-    import Footer from '$lib/components/Footer.svelte';
     import Hero from '$lib/components/Hero.svelte';
     import LinkGroup from '$lib/components/LinkGroup.svelte';
     import SharePanel from '$lib/components/SharePanel.svelte';
@@ -67,7 +66,6 @@
             />
         {/each}
     </div>
-    <Footer />
     <SharePanel
         open={shareOpen}
         url={shareUrl}

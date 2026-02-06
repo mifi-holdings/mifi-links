@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Snippet } from 'svelte';
 
+    import Footer from '$lib/components/Footer.svelte';
     import ThemeToggle from '$lib/components/ThemeToggle.svelte';
     import type { LayoutData } from './$types';
 
@@ -88,3 +89,4 @@
     <ThemeToggle />
 </header>
 {@render children()}
+<Footer />
