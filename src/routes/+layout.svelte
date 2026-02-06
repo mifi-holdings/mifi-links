@@ -25,16 +25,14 @@
                   url: data.site.url,
                   sameAs: data.site.person.sameAs,
               }
-            : null
+            : null,
     );
 
     // Inject as HTML to avoid Prettier parsing ld+json script body as JS (Babel syntax error)
     const ldJsonTag = (payload: string) =>
         '<' + 'script type="application/ld+json">' + payload + '<' + '/script>';
     const jsonLdHtml = $derived(ldJsonTag(JSON.stringify(jsonLd)));
-    const personLdHtml = $derived(
-        personLd != null ? ldJsonTag(JSON.stringify(personLd)) : ''
-    );
+    const personLdHtml = $derived(personLd != null ? ldJsonTag(JSON.stringify(personLd)) : '');
 </script>
 
 <svelte:head>

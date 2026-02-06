@@ -81,13 +81,13 @@ try {
     const scriptPath = join(immutableDir, filename);
     writeFileSync(scriptPath, content.trimStart(), 'utf-8');
     const scriptTag = `<script src="./_app/immutable/${filename}"></script>`;
-    html =
-        html.slice(0, found.start) +
-        scriptTag +
-        html.slice(found.end);
+    html = html.slice(0, found.start) + scriptTag + html.slice(found.end);
     writeFileSync(htmlPath, html, 'utf-8');
     console.log('Externalized SvelteKit bootstrap to', scriptPath);
 } catch (err) {
-    console.error('externalize-inline-script failed:', err instanceof Error ? err.message : String(err));
+    console.error(
+        'externalize-inline-script failed:',
+        err instanceof Error ? err.message : String(err),
+    );
     process.exit(1);
 }

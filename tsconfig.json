@@ -12,5 +12,15 @@
         "moduleResolution": "bundler"
     },
     "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
-    "exclude": ["node_modules", "dist", "build", "coverage", "playwright-report", "test-results", ".svelte-kit", "src/**/*.test.ts", "src/**/*.spec.ts"]
+    "exclude": [
+        "node_modules",
+        "dist",
+        "build",
+        "coverage",
+        "playwright-report",
+        "test-results",
+        ".svelte-kit",
+        "src/**/*.test.ts",
+        "src/**/*.spec.ts"
+    ]
 }

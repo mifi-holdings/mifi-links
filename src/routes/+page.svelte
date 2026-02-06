@@ -35,7 +35,10 @@
     <meta property="og:url" content={data.site.url} />
     <meta property="og:site_name" content={data.site.title} />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content="{data.site.url}/assets/images/mifi-{data.variant}-og-image.webp" />
+    <meta
+        property="og:image"
+        content="{data.site.url}/assets/images/mifi-{data.variant}-og-image.webp"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
@@ -43,7 +46,10 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={data.site.title} />
     <meta name="twitter:description" content={data.site.metaDescription} />
-    <meta name="twitter:image" content="{data.site.url}/assets/images/mifi-{data.variant}-twitter-image.webp" />
+    <meta
+        name="twitter:image"
+        content="{data.site.url}/assets/images/mifi-{data.variant}-twitter-image.webp"
+    />
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="1200" />
 </svelte:head>

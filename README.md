@@ -29,23 +29,23 @@ pnpm preview      # preview build at http://localhost:4173
 
 ## Scripts
 
-| Script               | Description                                                                                      |
-| -------------------- | ------------------------------------------------------------------------------------------------ |
-| `pnpm dev:bio`       | Start Vite dev server for mifi.bio                                                               |
-| `pnpm dev:dev`       | Start Vite dev server for mifi.dev                                                               |
-| `pnpm build`         | Build static site to `build/`                                                                    |
-| `pnpm build:full`       | Build + inline critical CSS (run `pnpm run critical-css:install` once to install Chromium) |
-| `pnpm critical-css:install` | Install Chromium for critical CSS (required once before first `build:full`)              |
-| `pnpm preview`          | Serve `build/` locally                                                                      |
-| `pnpm check`         | Run `svelte-kit sync` and `svelte-check`                                                         |
-| `pnpm lint`          | ESLint + Stylelint                                                                               |
-| `pnpm format`        | Prettier (write)                                                                                 |
-| `pnpm format:check`  | Prettier (check only)                                                                            |
-| `pnpm test`          | Vitest (watch)                                                                                   |
-| `pnpm test:run`      | Vitest (single run)                                                                              |
-| `pnpm test:coverage` | Vitest with coverage                                                                             |
-| `pnpm test:e2e`      | Playwright e2e (starts preview, then runs tests)                                                 |
-| `pnpm test:e2e:ui`   | Playwright e2e in UI mode                                                                        |
+| Script                      | Description                                                                                |
+| --------------------------- | ------------------------------------------------------------------------------------------ |
+| `pnpm dev:bio`              | Start Vite dev server for mifi.bio                                                         |
+| `pnpm dev:dev`              | Start Vite dev server for mifi.dev                                                         |
+| `pnpm build`                | Build static site to `build/`                                                              |
+| `pnpm build:full`           | Build + inline critical CSS (run `pnpm run critical-css:install` once to install Chromium) |
+| `pnpm critical-css:install` | Install Chromium for critical CSS (required once before first `build:full`)                |
+| `pnpm preview`              | Serve `build/` locally                                                                     |
+| `pnpm check`                | Run `svelte-kit sync` and `svelte-check`                                                   |
+| `pnpm lint`                 | ESLint + Stylelint                                                                         |
+| `pnpm format`               | Prettier (write)                                                                           |
+| `pnpm format:check`         | Prettier (check only)                                                                      |
+| `pnpm test`                 | Vitest (watch)                                                                             |
+| `pnpm test:run`             | Vitest (single run)                                                                        |
+| `pnpm test:coverage`        | Vitest with coverage                                                                       |
+| `pnpm test:e2e`             | Playwright e2e (starts preview, then runs tests)                                           |
+| `pnpm test:e2e:ui`          | Playwright e2e in UI mode                                                                  |
 
 ## Project layout
 
