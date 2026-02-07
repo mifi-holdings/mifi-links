@@ -14,8 +14,8 @@ steps:
       image: docker:latest
       environment:
           REGISTRY_REPO: git.mifi.dev/mifi-holdings/mifi-links
-          DOCKER_API_VERSION: "1.43"
-          DOCKER_BUILDKIT: "1"
+          DOCKER_API_VERSION: '1.43'
+          DOCKER_BUILDKIT: '1'
       volumes:
           - /var/run/docker.sock:/var/run/docker.sock
       commands:
@@ -48,7 +48,7 @@ steps:
     - name: Push to registry
       image: docker:latest
       environment:
-          DOCKER_API_VERSION: "1.43"
+          DOCKER_API_VERSION: '1.43'
           REGISTRY_URL: git.mifi.dev
           REGISTRY_REPO: git.mifi.dev/mifi-holdings/mifi-links
           REGISTRY_USERNAME:

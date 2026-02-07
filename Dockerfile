@@ -48,6 +48,7 @@ FROM nginx:alpine
 
 COPY --from=builder /out/dev /usr/share/nginx/html/dev
 COPY --from=builder /out/bio /usr/share/nginx/html/bio
+COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY nginx/snippets/ /etc/nginx/snippets/
 
