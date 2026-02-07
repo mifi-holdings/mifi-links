@@ -42,6 +42,9 @@
     aria-labelledby="panel-title"
     aria-modal="true"
     onclose={handleDialogClose}
+    onclick={(e) => {
+        if (e.target === dialogEl) onclose();
+    }}
     oncancel={(e) => {
         e.preventDefault();
         onclose();
