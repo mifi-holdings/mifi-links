@@ -125,6 +125,14 @@
             },
             "links": [
                 {
+                    "href": "https://mifi.dev/downloads/resume-2026lf.pdf",
+                    "icon": "Resume",
+                    "label": "Long-form CV",
+                    "description": "My full resume, including all my work experience, education, and skills.",
+                    "utmContent": "resume-lf",
+                    "variants": ["dev", "bio"]
+                },
+                {
                     "href": "https://mifi.dev/downloads/resume-2026c.pdf",
                     "icon": "Resume",
                     "label": "Contract",

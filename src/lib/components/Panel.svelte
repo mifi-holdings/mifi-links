@@ -1,4 +1,5 @@
 <script lang="ts">
+    import type { Snippet } from 'svelte';
     import type { Component } from 'svelte';
     import { tick } from 'svelte';
 
@@ -9,7 +10,7 @@
         open = false,
         title = '',
     }: {
-        children: import('svelte').Snippet;
+        children: Snippet;
         icon?: Component<{ size?: number }>;
         onclose: () => void;
         open: boolean;
@@ -105,7 +106,7 @@
         flex-direction: column;
         display: flex;
         max-height: 70vh;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
         overflow: hidden;
         width: 100%;
 

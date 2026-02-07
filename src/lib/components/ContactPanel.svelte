@@ -65,7 +65,7 @@
         color: var(--color-secondary-muted);
         display: block;
         font-size: 0.875rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
         text-align: center;
     }
 </style>
