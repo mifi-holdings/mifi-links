@@ -42,7 +42,7 @@
         --color-border: hsl(260 15% 22%);
         --color-border-subtle: hsl(260 12% 18%);
         --color-primary: hsl(262 70% 65%);
-        --color-primary-muted: hsl(262 50% 58%);
+        --color-primary-muted: hsl(262 50% 65%);
         --color-secondary: hsl(220 25% 68%);
         --color-secondary-muted: hsl(220 20% 58%);
         --color-accent: hsl(262 70% 65%);
@@ -85,7 +85,7 @@
     --color-border: hsl(260 15% 22%);
     --color-border-subtle: hsl(260 12% 18%);
     --color-primary: hsl(262 70% 65%);
-    --color-primary-muted: hsl(262 50% 58%);
+    --color-primary-muted: hsl(262 50% 65%);
     --color-secondary: hsl(220 25% 68%);
     --color-secondary-muted: hsl(220 20% 58%);
     --color-accent: hsl(262 70% 65%);

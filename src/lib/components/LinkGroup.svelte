@@ -33,7 +33,7 @@
 
 <style>
     .link-section-heading {
-        color: var(--color-primary);
+        color: var(--color-primary-muted);
         font-family: var(--font-heading, var(--font-sans));
         font-size: 1.125rem;
         font-weight: 500;

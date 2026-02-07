@@ -13,7 +13,7 @@ This repo is a **one-page static** Linktree-style site for mifi.dev. It is **not
 - **Critical CSS** via post-build script (`scripts/critical-css.mjs`); full build with critical CSS is `pnpm run build:full` (run `pnpm run critical-css:install` once to install Chromium)
 - **CSP-safe scripts:** Post-build `scripts/externalize-inline-script.mjs` moves SvelteKit’s inline bootstrap script to `_app/immutable/bootstrap.[hash].js` so CSP can use `script-src 'self'` without `unsafe-inline`
 - **Content:** JSON in `src/lib/data/` (e.g. `links.json`), loaded in `+page.server.ts` at build time
-- **CSP:** Set by Traefik middleware; do not add CSP in app code
+- **CSP:** Set by Traefik middleware; do not add CSP in app code. Middleware must not use `require-trusted-types-for 'script'` (Svelte hydration is incompatible).
 
 ## Conventions
 

@@ -155,3 +155,5 @@ pyftsubset ~/Downloads/Fraunces/fraunces-variable-opsz-wght.ttf \
 ## CSP
 
 CSP is set via Traefik middleware, not in app code.
+
+**Trusted Types:** This app is not compatible with `require-trusted-types-for 'script'`. Svelte’s runtime assigns to DOM sinks (e.g. `innerHTML`) during hydration, which that directive blocks. The Traefik middleware used for mifi.dev/mifi.bio must not include `require-trusted-types-for 'script'` (or the site will break with "This assignment requires a TrustedHTML").
