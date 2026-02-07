@@ -1,8 +1,10 @@
 # Deploy: build image, push to registry, trigger Portainer stack redeploy.
 # Runs on push/tag/manual to main only, after ci workflow succeeds.
 when:
-    branch: main
-    event: [push, tag, manual]
+    - branch: main
+      event: [push, tag, manual]
+    - event: deployment
+      evaluate: 'CI_PIPELINE_DEPLOY_TARGET == "production"'
 
 depends_on:
     - ci
