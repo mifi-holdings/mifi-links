@@ -32,9 +32,9 @@ try {
         html,
         inline: { strategy: 'default' }, // preload in head + link at end of body (no inline JS, CSP-safe)
         dimensions: [
-            { width: 375, height: 667 },   // mobile (iPhone SE)
-            { width: 768, height: 1024 },  // tablet
-            { width: 1280, height: 720 },  // desktop
+            { width: 375, height: 667 }, // mobile (iPhone SE)
+            { width: 768, height: 1024 }, // tablet
+            { width: 1280, height: 720 }, // desktop
         ],
         penthouse: { timeout: 30000 },
     });

@@ -50,7 +50,7 @@
             {#if qrCodeImage}
                 <div class="share-qr">
                     <img
-                        src="/assets/images/{qrCodeImage}.png"
+                        src="/assets/images/{qrCodeImage}.svg"
                         alt="QR code for this page"
                         width="160"
                         height="160"

@@ -29,11 +29,7 @@ export interface Site {
         sameAs: string[];
     };
     linksHeading?: string;
-    /** If false, hide Contact button and panel for this variant. Default true. */
-    showContact?: boolean;
-    /** Contact panel links; if omitted, first section links are used. */
     contactLinks?: ContactLink[];
-    /** Optional QR code image path (e.g. /assets/images/qr-mifi-dev.png) for Share panel. */
     qrCodeImage?: string | null;
 }
 

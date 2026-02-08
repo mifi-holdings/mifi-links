@@ -48,30 +48,30 @@ steps:
     - name: Send Docker Image Build Status Notification (success)
       image: curlimages/curl
       environment:
-        DISCORD_WEBHOOK_URL:
-          from_secret: discord_webhook_url
+          DISCORD_WEBHOOK_URL:
+              from_secret: discord_webhook_url
       commands:
-        - |
-          BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Docker image build success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-          curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+          - |
+              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Docker image build success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
       depends_on:
-        - Docker image build
+          - Docker image build
       when:
-        - status: [ success ]
+          - status: [success]
 
     - name: Send Docker Image Build Status Notification (failure)
       image: curlimages/curl
       environment:
-        DISCORD_WEBHOOK_URL:
-          from_secret: discord_webhook_url
+          DISCORD_WEBHOOK_URL:
+              from_secret: discord_webhook_url
       commands:
-        - |
-          BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Docker image build failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-          curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+          - |
+              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Docker image build failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
       depends_on:
-        - Docker image build
+          - Docker image build
       when:
-        - status: [ failure ]
+          - status: [failure]
 
     - name: Push to registry
       image: docker:latest
@@ -103,30 +103,30 @@ steps:
     - name: Send Push to Registry Status Notification (success)
       image: curlimages/curl
       environment:
-        DISCORD_WEBHOOK_URL:
-          from_secret: discord_webhook_url
+          DISCORD_WEBHOOK_URL:
+              from_secret: discord_webhook_url
       commands:
-        - |
-          BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Push to registry success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-          curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+          - |
+              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Push to registry success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
       depends_on:
-        - Push to registry
+          - Push to registry
       when:
-        - status: [ success ]
+          - status: [success]
 
     - name: Send Push to Registry Status Notification (failure)
       image: curlimages/curl
       environment:
-        DISCORD_WEBHOOK_URL:
-          from_secret: discord_webhook_url
+          DISCORD_WEBHOOK_URL:
+              from_secret: discord_webhook_url
       commands:
-        - |
-          BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Push to registry failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-          curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+          - |
+              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Push to registry failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
       depends_on:
-        - Push to registry
+          - Push to registry
       when:
-        - status: [ failure ]
+          - status: [failure]
 
     - name: Trigger Portainer stack redeploy
       image: curlimages/curl:latest
@@ -151,27 +151,27 @@ steps:
     - name: Send Deploy Status Notification (success)
       image: curlimages/curl
       environment:
-        DISCORD_WEBHOOK_URL:
-          from_secret: discord_webhook_url
+          DISCORD_WEBHOOK_URL:
+              from_secret: discord_webhook_url
       commands:
-        - |
-          BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Production Deploy success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-          curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+          - |
+              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Production Deploy success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
       depends_on:
-        - Trigger Portainer stack redeploy
+          - Trigger Portainer stack redeploy
       when:
-        - status: [ success ]
+          - status: [success]
 
     - name: Send Deploy Status Notification (failure)
       image: curlimages/curl
       environment:
-        DISCORD_WEBHOOK_URL:
-          from_secret: discord_webhook_url
+          DISCORD_WEBHOOK_URL:
+              from_secret: discord_webhook_url
       commands:
-        - |
-          BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Production Deploy failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-          curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+          - |
+              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Production Deploy failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
       depends_on:
-        - Trigger Portainer stack redeploy
+          - Trigger Portainer stack redeploy
       when:
-        - status: [ failure ]
+          - status: [failure]

@@ -57,7 +57,6 @@ export const load: LayoutServerLoad<LayoutServerDataOut> = (): LayoutServerDataO
         location: siteDef?.location,
         person: siteDef?.person,
         linksHeading: siteDef?.linksHeading,
-        showContact: siteDef?.showContact,
         contactLinks: siteDef?.contactLinks,
         qrCodeImage: siteDef?.qrCodeImage ?? undefined,
     };

@@ -20,8 +20,7 @@
                 ]
             },
             "linksHeading": "Professional Links and Profiles",
-            "showContact": true,
-            "qrCodeImage": null
+            "qrCodeImage": "qr-mifi-dev"
         },
         "bio": {
             "title": "mifi.bio — the homepage of the human Mike Fitzpatrick",
@@ -51,8 +50,7 @@
                 ]
             },
             "linksHeading": "Links and Profiles",
-            "showContact": false,
-            "qrCodeImage": null
+            "qrCodeImage": "qr-mifi-bio"
         }
     },
     "contactLinks": [
