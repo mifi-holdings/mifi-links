@@ -8,9 +8,9 @@
         "build": "vite build && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs",
         "build:bio": "CONTENT_VARIANT=bio vite build && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs",
         "build:dev": "CONTENT_VARIANT=dev vite build && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs",
-        "build:full": "vite build && pnpm run critical-css && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs",
-        "build:full:bio": "CONTENT_VARIANT=bio vite build && pnpm run critical-css && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs",
-        "build:full:dev": "CONTENT_VARIANT=dev vite build && pnpm run critical-css && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs",
+        "build:full": "vite build && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs && pnpm run critical-css",
+        "build:full:bio": "CONTENT_VARIANT=bio vite build && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs && pnpm run critical-css",
+        "build:full:dev": "CONTENT_VARIANT=dev vite build && node scripts/minify-static-assets.mjs && node scripts/externalize-inline-script.mjs && pnpm run critical-css",
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
         "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -65,7 +65,7 @@
     "dependencies": {
         "@lucide/svelte": "^0.563.1"
     },
-    "packageManager": "pnpm@10.28.2",
+    "packageManager": "pnpm@10.29.1+sha512.48dae233635a645768a3028d19545cacc1688639eeb1f3734e42d6d6b971afbf22aa1ac9af52a173d9c3a20c15857cfa400f19994d79a2f626fcc73fccda9bbc",
     "repository": {
         "type": "git",
         "url": "https://git.mifi.dev/mifi-holdings/mifi-links.git"

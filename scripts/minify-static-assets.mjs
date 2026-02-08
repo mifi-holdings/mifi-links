@@ -1,5 +1,6 @@
 /**
  * Post-build: minify JS and CSS under build/assets (files copied from static/).
+ * Includes static/assets/js/*.js (e.g. ga-init.js, bootstrap.js) and assets/*.css.
  * Usage: node scripts/minify-static-assets.mjs [buildDir]
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
