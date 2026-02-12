@@ -48,12 +48,16 @@ steps:
     - name: Send Docker Image Build Status Notification (success)
       image: curlimages/curl
       environment:
-          DISCORD_WEBHOOK_URL:
-              from_secret: discord_webhook_url
+          MATTERMOST_BOT_ACCESS_TOKEN:
+              from_secret: mattermost_bot_access_token
+          MATTERMOST_CHANNEL_ID:
+              from_secret: mattermost_pushes_channel_id
+          MATTERMOST_POST_API_URL:
+              from_secret: mattermost_post_api_url
       commands:
           - |
-              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Docker image build success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+              BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] Docker image build success 🎉"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
           - Docker image build
       when:
@@ -62,12 +66,16 @@ steps:
     - name: Send Docker Image Build Status Notification (failure)
       image: curlimages/curl
       environment:
-          DISCORD_WEBHOOK_URL:
-              from_secret: discord_webhook_url
+          MATTERMOST_BOT_ACCESS_TOKEN:
+              from_secret: mattermost_bot_access_token
+          MATTERMOST_CHANNEL_ID:
+              from_secret: mattermost_pushes_channel_id
+          MATTERMOST_POST_API_URL:
+              from_secret: mattermost_post_api_url
       commands:
           - |
-              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Docker image build failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+              BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] Docker image build failure 💩"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
           - Docker image build
       when:
@@ -103,12 +111,16 @@ steps:
     - name: Send Push to Registry Status Notification (success)
       image: curlimages/curl
       environment:
-          DISCORD_WEBHOOK_URL:
-              from_secret: discord_webhook_url
+          MATTERMOST_BOT_ACCESS_TOKEN:
+              from_secret: mattermost_bot_access_token
+          MATTERMOST_CHANNEL_ID:
+              from_secret: mattermost_pushes_channel_id
+          MATTERMOST_POST_API_URL:
+              from_secret: mattermost_post_api_url
       commands:
           - |
-              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Push to registry success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+              BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] Push to registry success 🎉"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
           - Push to registry
       when:
@@ -117,12 +129,16 @@ steps:
     - name: Send Push to Registry Status Notification (failure)
       image: curlimages/curl
       environment:
-          DISCORD_WEBHOOK_URL:
-              from_secret: discord_webhook_url
+          MATTERMOST_BOT_ACCESS_TOKEN:
+              from_secret: mattermost_bot_access_token
+          MATTERMOST_CHANNEL_ID:
+              from_secret: mattermost_pushes_channel_id
+          MATTERMOST_POST_API_URL:
+              from_secret: mattermost_post_api_url
       commands:
           - |
-              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Push to registry failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+              BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] Push to registry failure 💩"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
           - Push to registry
       when:
@@ -151,12 +167,16 @@ steps:
     - name: Send Deploy Status Notification (success)
       image: curlimages/curl
       environment:
-          DISCORD_WEBHOOK_URL:
-              from_secret: discord_webhook_url
+          MATTERMOST_BOT_ACCESS_TOKEN:
+              from_secret: mattermost_bot_access_token
+          MATTERMOST_CHANNEL_ID:
+              from_secret: mattermost_pushes_channel_id
+          MATTERMOST_POST_API_URL:
+              from_secret: mattermost_post_api_url
       commands:
           - |
-              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Production Deploy success 🎉"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+              BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] Production Deploy success 🎉"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
           - Trigger Portainer stack redeploy
       when:
@@ -165,12 +185,16 @@ steps:
     - name: Send Deploy Status Notification (failure)
       image: curlimages/curl
       environment:
-          DISCORD_WEBHOOK_URL:
-              from_secret: discord_webhook_url
+          MATTERMOST_BOT_ACCESS_TOKEN:
+              from_secret: mattermost_bot_access_token
+          MATTERMOST_CHANNEL_ID:
+              from_secret: mattermost_pushes_channel_id
+          MATTERMOST_POST_API_URL:
+              from_secret: mattermost_post_api_url
       commands:
           - |
-              BODY=$(printf '{"username":"WoodpeckerBot","content":"[%s - Build #%s] Production Deploy failure 💩"}' "$CI_REPO" "$CI_PIPELINE_NUMBER")
-              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" "$DISCORD_WEBHOOK_URL"
+              BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] Production Deploy failure 💩"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
+              curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
           - Trigger Portainer stack redeploy
       when:
