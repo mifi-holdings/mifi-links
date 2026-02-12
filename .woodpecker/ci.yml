@@ -88,7 +88,7 @@ steps:
               BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] Test failure 💩"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
               curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
-          - Unit tests
+          - Unit Tests
       when:
           - status: [failure]
 
@@ -98,7 +98,7 @@ steps:
           - corepack enable && corepack prepare pnpm@latest --activate
           - pnpm run build
       depends_on:
-          - Unit tests
+          - Unit Tests
 
     - name: Send Build Status Notification (failure)
       image: curlimages/curl
@@ -148,7 +148,7 @@ steps:
       when:
           - status: [failure]
 
-    - name: E2E tests
+    - name: E2E Tests
       image: node:22-bookworm-slim
       commands:
           - corepack enable && corepack prepare pnpm@latest --activate
@@ -171,7 +171,7 @@ steps:
               BODY=$(printf '{"channel_id":"%s","message":"[%s - Build #%s] E2E failure 💩"}' "$MATTERMOST_CHANNEL_ID" "$CI_REPO" "$CI_PIPELINE_NUMBER")
               curl -sS -X POST -H "Content-Type: application/json" -d "$BODY" -H "Authorization: Bearer $MATTERMOST_BOT_ACCESS_TOKEN" $MATTERMOST_POST_API_URL
       depends_on:
-          - E2E tests
+          - E2E Tests
       when:
           - status: [failure]
 
@@ -192,9 +192,9 @@ steps:
           - install
           - lint
           - check
-          - Unit tests
+          - Unit Tests
           - build
           - build-full
-          - E2E tests
+          - E2E Tests
       when:
           - status: [success]
