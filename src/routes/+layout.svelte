@@ -94,3 +94,11 @@
 </header>
 {@render children()}
 <Footer />
+<img
+    src="https://analytics.mifi.holdings/p/wQ9GYnLIg"
+    alt=""
+    width="1"
+    height="1"
+    role="presentation"
+    loading="eager"
+/>
