@@ -5,7 +5,14 @@
     let { href, icon, label, description }: ProcessedLink = $props();
 </script>
 
-<a {href} rel="noopener noreferrer" target="_blank" class="link" data-umami-event={`${label} link`}>
+<a
+    {href}
+    rel="noopener noreferrer"
+    target="_blank"
+    class="link"
+    data-umami-event={`link click`}
+    data-umami-event-label={label}
+>
     <span class="icon" aria-hidden="true">
         <LinkIcon {href} {icon} {label} />
     </span>

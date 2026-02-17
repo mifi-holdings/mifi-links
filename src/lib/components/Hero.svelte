@@ -35,7 +35,8 @@
                     contactOpen = true;
                     shareOpen = false;
                 }}
-                data-umami-event="header contact button"
+                data-umami-event="header button"
+                data-umami-event-label="contact"
             >
                 <IconContact size={20} />
             </button>
@@ -48,7 +49,8 @@
                 shareOpen = true;
                 contactOpen = false;
             }}
-            data-umami-event="header share button"
+            data-umami-event="header button"
+            data-umami-event-label="share"
         >
             <IconShare size={20} />
         </button>
@@ -100,7 +102,8 @@
                         contactOpen = true;
                         shareOpen = false;
                     }}
-                    data-umami-event="hero contact button"
+                    data-umami-event="hero card button"
+                    data-umami-event-label="contact"
                 >
                     <IconContact size={20} />
                     <span>Contact</span>
@@ -114,7 +117,8 @@
                     shareOpen = true;
                     contactOpen = false;
                 }}
-                data-umami-event="hero share button"
+                data-umami-event="hero card button"
+                data-umami-event-label="share"
             >
                 <IconShare size={20} />
                 <span>Share</span>

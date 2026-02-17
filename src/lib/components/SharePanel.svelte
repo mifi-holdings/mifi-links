@@ -61,7 +61,8 @@
                 type="button"
                 class="panel-btn"
                 onclick={copyLink}
-                data-umami-event="share panel copy"
+                data-umami-event="share panel item"
+                data-umami-event-label="copy"
             >
                 <IconCopy size={20} />
                 {copied ? 'Copied!' : 'Copy link'}
@@ -72,7 +73,8 @@
                 onclick={onclose}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-umami-event="share panel email link"
+                data-umami-event="share panel item"
+                data-umami-event-label="email"
             >
                 <IconEmail size={20} />
                 Email link
@@ -82,7 +84,8 @@
                     type="button"
                     class="panel-btn"
                     onclick={share}
-                    data-umami-event="share panel device share"
+                    data-umami-event="share panel item"
+                    data-umami-event-label="device share"
                 >
                     <IconShare size={20} />
                     Share…

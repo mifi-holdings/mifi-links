@@ -64,6 +64,8 @@
                 aria-label="Close"
                 bind:this={closeBtnEl}
                 onclick={onclose}
+                data-umami-event="panel button"
+                data-umami-event-label="close"
             >
                 <span aria-hidden="true">×</span>
             </button>

@@ -45,7 +45,8 @@
         aria-label="Close theme menu"
         tabindex="-1"
         onclick={() => (expanded = false)}
-        data-umami-event="theme toggle close"
+        data-umami-event="theme toggle button"
+        data-umami-event-label="close"
     ></button>
 {/if}
 
@@ -65,7 +66,8 @@
             aria-current={current === 'light' ? 'true' : undefined}
             title="Light"
             onclick={() => handleClick('light')}
-            data-umami-event="theme toggle light"
+            data-umami-event="theme toggle button"
+            data-umami-event-label="light"
         >
             <Sun size={24} />
         </button>
@@ -77,7 +79,8 @@
             aria-current={current === 'dark' ? 'true' : undefined}
             title="Dark"
             onclick={() => handleClick('dark')}
-            data-umami-event="theme toggle dark"
+            data-umami-event="theme toggle button"
+            data-umami-event-label="dark"
         >
             <Moon size={24} />
         </button>
@@ -89,7 +92,8 @@
             aria-current={current === 'auto' ? 'true' : undefined}
             title="Auto (system)"
             onclick={() => handleClick('auto')}
-            data-umami-event="theme toggle auto"
+            data-umami-event="theme toggle button"
+            data-umami-event-label="auto"
         >
             <SunMoon size={24} />
         </button>
