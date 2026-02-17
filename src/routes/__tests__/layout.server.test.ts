@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { load } from '../+layout.server';
+import { UMAMI_MEASUREMENT_IDS } from '$lib/config';
 import { ContentVariant } from '$lib/data/constants';
 import type { ContentData } from '$lib/data/types';
 
@@ -95,7 +96,9 @@ describe('+layout.server', () => {
     it('gaMeasurementId matches variant', () => {
         process.env.CONTENT_VARIANT = ContentVariant.DEV;
         expect(load().gaMeasurementId).toMatch(/^G-/);
+        expect(load().umamiMeasurementId).toBe(UMAMI_MEASUREMENT_IDS[ContentVariant.DEV]);
         process.env.CONTENT_VARIANT = ContentVariant.BIO;
         expect(load().gaMeasurementId).toMatch(/^G-/);
+        expect(load().umamiMeasurementId).toBe(UMAMI_MEASUREMENT_IDS[ContentVariant.BIO]);
     });
 });

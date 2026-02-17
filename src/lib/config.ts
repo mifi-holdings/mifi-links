@@ -2,6 +2,8 @@
  * App config: own-property hostnames for UTM attribution, variant hostnames, GA IDs.
  */
 
+import { ContentVariant } from './data/constants';
+
 export const OWN_PROPERTY_HOSTS = [
     'mifi.ventures',
     'cal.mifi.ventures',
@@ -9,20 +11,25 @@ export const OWN_PROPERTY_HOSTS = [
     'mifi.bio',
 ] as const;
 
-export const VARIANT_HOSTS: Record<'dev' | 'bio', string> = {
-    dev: 'mifi.dev',
-    bio: 'mifi.bio',
+export const VARIANT_HOSTS: Record<ContentVariant, string> = {
+    [ContentVariant.DEV]: 'mifi.dev',
+    [ContentVariant.BIO]: 'mifi.bio',
 };
 
-export const GA_MEASUREMENT_IDS: Record<'dev' | 'bio', string> = {
-    dev: 'G-P8V832WDM8',
-    bio: 'G-885B0KYWZ1',
+export const GA_MEASUREMENT_IDS: Record<ContentVariant, string> = {
+    [ContentVariant.DEV]: 'G-P8V832WDM8',
+    [ContentVariant.BIO]: 'G-885B0KYWZ1',
+};
+
+export const UMAMI_MEASUREMENT_IDS: Record<ContentVariant, string> = {
+    [ContentVariant.DEV]: 'ac7e751b-4ce3-49f2-80e0-f430b292b72a',
+    [ContentVariant.BIO]: 'cf44669d-10c1-4982-ad79-282aed4237e5',
 };
 
 /** theme-color meta values per variant (match tokens-{variant}.css --color-bg) */
-export const THEME_COLORS: Record<'dev' | 'bio', { light: string; dark: string }> = {
-    dev: { light: '#f5f4f8', dark: '#131118' }, // hsl(260 20% 98%) / hsl(260 18% 8%)
-    bio: { light: '#f4f6f9', dark: '#111318' }, // hsl(220 22% 98%) / hsl(220 18% 8%)
+export const THEME_COLORS: Record<ContentVariant, { light: string; dark: string }> = {
+    [ContentVariant.DEV]: { light: '#f5f4f8', dark: '#131118' }, // hsl(260 20% 98%) / hsl(260 18% 8%)
+    [ContentVariant.BIO]: { light: '#f4f6f9', dark: '#111318' }, // hsl(220 22% 98%) / hsl(220 18% 8%)
 };
 
 export const UTM_MEDIUM = 'link';

@@ -15,9 +15,12 @@ describe('+layout (LayoutData)', () => {
             links: { sections: [] },
             variant: 'dev',
             gaMeasurementId: 'G-xxx',
+            umamiMeasurementId: 'UM-xxx',
         };
         expect(mockData.site).toHaveProperty('title');
         expect(mockData.site).toHaveProperty('url');
+        expect(mockData).toHaveProperty('umamiMeasurementId');
+        expect(mockData).toHaveProperty('gaMeasurementId');
         expect(mockData).toHaveProperty('variant');
         expect(mockData.links).toHaveProperty('sections');
     });
