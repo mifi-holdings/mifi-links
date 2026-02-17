@@ -40,6 +40,11 @@
     <!-- Google tag (gtag.js): ID passed via data-ga-id for CSP (no inline script) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={data.gaMeasurementId}"></script>
     <script defer src="/assets/js/ga-init.js" data-ga-id={data.gaMeasurementId}></script>
+    <script
+        defer
+        src="https://analytics.mifi.holdings/script.js"
+        data-website-id={data.umamiMeasurementId}
+    ></script>
 
     <link rel="stylesheet" href="/assets/tokens-{data.variant}.css" />
 
