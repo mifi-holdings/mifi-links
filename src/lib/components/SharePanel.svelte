@@ -57,7 +57,12 @@
                     />
                 </div>
             {/if}
-            <button type="button" class="panel-btn" onclick={copyLink}>
+            <button
+                type="button"
+                class="panel-btn"
+                onclick={copyLink}
+                data-umami-event="share panel copy"
+            >
                 <IconCopy size={20} />
                 {copied ? 'Copied!' : 'Copy link'}
             </button>
@@ -67,12 +72,18 @@
                 onclick={onclose}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-umami-event="share panel email link"
             >
                 <IconEmail size={20} />
                 Email link
             </a>
             {#if canShare}
-                <button type="button" class="panel-btn" onclick={share}>
+                <button
+                    type="button"
+                    class="panel-btn"
+                    onclick={share}
+                    data-umami-event="share panel device share"
+                >
                     <IconShare size={20} />
                     Share…
                 </button>

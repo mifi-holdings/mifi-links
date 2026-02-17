@@ -34,6 +34,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-describedby={link.description ? descriptionId : undefined}
+                        data-umami-event={`contact panel ${link.label} link`}
                     >
                         {#if link.icon}
                             <LinkIcon href={link.href} icon={link.icon} label={link.label} />
