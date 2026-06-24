@@ -44,6 +44,11 @@
         defer
         src="https://analytics.mifi.holdings/script.js"
         data-website-id={data.umamiMeasurementId}
+        data-performance="true"
+    ></script>
+    <script
+        defer src="https://analytics.mifi.holdings/recorder.js"
+        data-website-id={data.umamiMeasurementId}
     ></script>
 
     <link rel="stylesheet" href="/assets/tokens-{data.variant}.css" />

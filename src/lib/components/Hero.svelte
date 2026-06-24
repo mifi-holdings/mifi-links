@@ -2,6 +2,7 @@
     import { HeroLayout } from '$lib/data/constants';
     import type { Site } from '$lib/data/types';
     import IconContact from './icons/IconContact.svelte';
+    import IconMapPin from './icons/IconMapPin.svelte';
     import IconShare from './icons/IconShare.svelte';
 
     let {
@@ -88,7 +89,8 @@
                             <span class="hero-meta-sep" aria-hidden="true"> · </span>
                         {/if}
                     {/if}
-                    {#if location}<span>{location}</span>{/if}
+                    {#if location}<span class="location"><IconMapPin size={16} /> {location}</span
+                        >{/if}
                 </p>
             {/if}
         </div>
